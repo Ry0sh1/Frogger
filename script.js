@@ -73,7 +73,7 @@ function update(){
             settings.carMaxSpeed++;
         }
         streets.forEach(street => {
-            street.reset();
+            street.nextLevel();
         })
     }
     draw();
@@ -191,7 +191,6 @@ function buttonPress(){
             }
         }
     })
+    generateStreets();
+    update();
 }
-
-generateStreets();
-update();

@@ -25,9 +25,15 @@ class Street{
         this.cars.splice(this.cars.indexOf(car), 1);
     }
 
-    reset(){
-        this.cars = [];
-        this.right = Math.random() > 0.5;
+    nextLevel(){
+        this.speed = Math.floor(Math.random() * (settings.carMaxSpeed - settings.carMinSpeed + 1) + settings.carMinSpeed);
+        this.cars.forEach(car => {
+            if (this.right){
+                car.speed = this.speed;
+            }else {
+                car.speed = -this.speed;
+            }
+        })
     }
 
 }
